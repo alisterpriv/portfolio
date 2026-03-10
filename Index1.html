@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alister Dsilva — Front-End Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <span class="nav-brand">Alister Dsilva</span>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Hire Me</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-name">
+            <span class="name-white">Alister</span>
+            <span class="name-blue">Dsilva</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Passionate about building smart, user-friendly web solutions using AI and modern
+            front-end technologies.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Projects →</a>
+            <a href="#contact" class="btn btn-ghost">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="images/IMG_20250829_082511.jpg" alt="Alister Dsilva" />
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="container">
+        <h2>Technical Skillset</h2>
+
+        <div class="skills-grid">
+          <div class="skill-chip">HTML5</div>
+          <div class="skill-chip">CSS3</div>
+          <div class="skill-chip">JavaScript</div>
+          <div class="skill-chip">Python</div>
+          <div class="skill-chip">Java</div>
+          <div class="skill-chip">Tailwind</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+
+        <div class="projects-row">
+          <article class="project-card">
+            <img src="images/Tic_Tac_Toe.png" alt="Tic Tac Toe" />
+
+            <h3>Tic Tac Toe</h3>
+
+            <p>A modern implementation of the classic game featuring a smart AI opponent.</p>
+
+            <a href="https://alisterpriv.github.io/Tic_Tac_Toe/" class="proj-btn"> View Live ↗ </a>
+          </article>
+
+          <article class="project-card">
+            <img src="images/To_Do_App.png" alt="Todo App" />
+
+            <h3>Todo List App</h3>
+
+            <p>A responsive task manager allowing users to add, complete and delete tasks.</p>
+
+            <a href="https://alisterpriv.github.io/to-do-app/" class="proj-btn"> View Live ↗ </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2>
+            Let's build something
+            <span class="text-blue">extraordinary</span>
+            together
+          </h2>
+
+          <p>
+            Currently looking for new opportunities and collaborations. Reach out if you have a
+            vision that needs code.
+          </p>
+
+          <p>Email: alisterpriv@gmail.com</p>
+          <p>Pune, India</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+
+          <input type="email" name="email" placeholder="Your Email" required />
+
+          <textarea name="message" placeholder="Your Message" required></textarea>
+
+          <button type="submit" class="btn btn-primary full">Send Message →</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Alister Dsilva. Crafted with passion & perfection.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      (function () {
+        emailjs.init('rrr5irK5fLpzLhKDc');
+      })();
+
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_5dt0g3x', 'template_mcvdp7o', this).then(
+          function () {
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset();
+          },
+          function () {
+            alert('Failed to send message');
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
